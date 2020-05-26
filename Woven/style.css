@@ -4,11 +4,21 @@
     background-color: #E5E5E5;
     width: 100vw;
     height: auto;
-    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     display: flex;
     flex-direction: column;
     scroll-behavior: smooth;
+}
+.body a{
+    text-decoration-line: none;
+}
+.body a:visited {
+    text-decoration: none;
+    text-decoration-line: none;
+}
+.body a:hover {
+    text-decoration: none;
+    text-decoration-line: none;
 }
 
 .header {
@@ -134,9 +144,9 @@
 }
 .front-gallery {
     background-color: #E5E5E5;
-    width: 80%;
-    padding-right: 10vw;
-    padding-left: 10vw;
+    width: 88%;
+    padding-right: 6vw;
+    padding-left: 6vw;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -171,9 +181,7 @@
     justify-content: space-between;
     align-items: center;
 }
-.sort-by {
-
-}
+.sort-by {}
 
 .right-sort {
     display: flex;
@@ -195,19 +203,18 @@
     
 }
 .front-gallery-panel {
-    width: 38vw;
+    width: 42vw;
     height: 70vh;
     background-color: white;
     margin-top: 3rem;   
     color: transparent;
     transition: all 0.1s ease;
     opacity: 1;
-    z-index: 999;
-
 }
 
 .panel-image {
-    height: 75%;
+    height: 65%;
+    min-height: 55%;
     width: 100%;
     background-size: cover;
     background-position: center;
@@ -219,14 +226,13 @@
     text-align: center;
     align-items: center;
     transition: all 0.4s ease;
-    z-index: 998;
 }
 #read-more {
     color: transparent;
     font-size: 30px;
     font-weight: 200;
     opacity: 1;
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 100%;
     display: flex;
@@ -234,12 +240,12 @@
     align-items: center;
 }
 .front-gallery-panel:hover #read-more {
-    color: rgb(24, 117, 40);
-    font-size: 30px;
-    font-weight: 200;
+    font-family: "Lato";
+    color: rgb(45, 158, 64);
+    font-size: 25px;
+    font-weight: bold;
     opacity: 1;
-    position: absolute;
-    z-index: 10000;
+    position: relative;
     background-color: rgba(255, 255, 255, 0.692);
 }
 .front-gallery-panel:hover .panel-image{
@@ -248,19 +254,77 @@
     position: relative;
 }
 .front-gallery-panel:hover .panel-bar{
-    background-color: rgba(27, 158, 49, 0.466); ;
+    background-color: rgba(55, 170, 74, 0.39); ;
 }
 
 
 .panel-bar {
-    height: 25%;
+    height: 35%;
+    max-height: 45%;
     width: 100%;
+    color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
+.bar-container {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+}
+.writer-cat {
+    flex: 4;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.artist {
+    color: rgb(100, 100, 100);
+    font-weight: 300;
+    font-size: 14px;
+    font-family: Lato;
+
+}
+.categ {
+    color: rgb(0, 0, 0);
+    font-weight: light;
+    font-size: 14px;
+    font-family: "Lato";
+    padding-left: 5px;
+}
+
+.article{
+    color: rgb(0, 0, 0);
+    width: 15rem;
+    font-family: "Crimson Text";
+    font-weight: regular;
+    font-size: 25px;
+    margin-top: 1rem;
+    border-bottom: 2px solid rgb(45, 158, 64);
+}
+
+.description{
+    margin: 0;
+    flex: 1;
+    color: rgb(0, 0, 0);
+    font-weight: light;
+    font-size: 16px;
+    font-family: "Lato";
+    margin-top: 5px;
+}
+.date{
+    text-align: end;
+    flex: 1;
+    position: relative;
+}
+
 
 .see-all {
     width: 100%;
     height: 10vh;
-    background-color: rgba(243, 243, 243, 0.959);
+    background-color: #E5E5E5;
     text-align: center;
     padding-top: 3rem;
 }
