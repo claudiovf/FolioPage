@@ -13,34 +13,208 @@
     text-decoration-line: none;
 }
 .body a:visited {
-    text-decoration: none;
     text-decoration-line: none;
 }
 .body a:hover {
-    text-decoration: none;
     text-decoration-line: none;
 }
 
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    z-index: 998;
+    background-size: cover;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: transparent;
+    transition: 
+        background-color 0.5s ease,
+        visibility 0.15s ease;
+    visibility: hidden;
+    
+}
+.active {
+    visibility: visible;
+    background-color: rgba(255, 255, 255, 0.950);
+
+}
+.menu-overlay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    visibility: hidden;
+    transition:  visibility 0.15s ease;
+    display: none;
+    padding-top: 15vh;
+}
+.active-menu {
+    visibility: visible;
+    display: flex;
+}
+
+.menu-list {
+    width: 100vw;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+    padding: 0;
+}
+ .list-item {
+     height: 6rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.list-item p {
+    font-family: "Crimson Text";
+    font-style: italic;
+    font-size: 18px;
+    margin-bottom: -10px;
+    color: rgb(26, 161, 112);
+}
+.list-item a {
+    color: rgba(0, 0, 0, 0.151);
+    font-weight: "Regular";
+    font-size: 2.5rem;
+    font-family: "Lato";
+    transition: color 0.5s ease;
+    letter-spacing: 5px;
+}
+.list-item a:hover {
+    color: rgba(0, 0, 0, 0.877);
+}
+.request {
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.request-btn {
+    background-color: rgba(26, 161, 111, 0.849);
+    padding: 1.1rem 1.5rem 1.1rem 1.5rem;
+    display: block;
+    text-align: center;
+    align-content: center;
+    color: rgba(255, 255, 255, 0.925);
+    font-weight: "Regular";
+    font-size: 1rem;
+    font-family: "Lato";
+    letter-spacing: 3px;
+    border-radius: 2px;
+}
+.social {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: "Crimson Text";
+    font-style: italic;
+    color: black;
+}
+.social a {
+    width: 9rem;
+    font-family: "Crimson Text";
+    font-style: italic;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.747);
+    text-align: center;
+}
+
+/*
+        START OF SHOP OVERLAY
+*/
+
+.shop-overlay {
+    height: 65vh;
+    width: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    visibility: hidden;
+    margin: 0;
+    background-position-y: top;
+    transition: transform 0.5s ease-out,
+                visibility 1s ease-out;
+    transform: translateY(-100%);
+    background-color: rgba(255, 255, 255, 0.950)
+}
+
+.active-shop {
+    visibility: visible;
+    transform: translateY(0%);
+    transition: transform 0.5s ease-out,
+                visibility 1s ease-out;
+}
+
+.shop-slide {
+    background-color: rgba(0, 0, 0, 0.178);
+    display: flex;
+    flex-direction: column;
+    height: 88%;
+    width: 100%;
+    position: relative;
+}
+
+.shop-all-slide {
+    height: 12%;
+    width: 100%;
+    background-color: rgba(233, 233, 233, 0.521);
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-weight: "Regular";
+    font-size: 1.3rem;
+    font-family: "Lato";
+    letter-spacing: 3px;
+    transition: all 0.3s ease-out;
+}
+.shop-all-slide:hover {
+    background-color: rgb(26, 161, 112);
+    color: whitesmoke;
+}
 .header {
     background-color: white;
     width: 100vw;
     height: 7vh;
     min-height: 70px;
     position: fixed;
-    z-index: 999;
+    z-index: 1000;
     display: flex;
     flex-direction: row;
     justify-content: stretch;
     text-align: center;
     align-items: center;
     box-shadow: 2px 2px 1px 0.2px rgba(0, 0, 0, 0.041);
+    color: rgb(0, 0, 0);
+    font-weight: light;
+    font-size: 20px;
+    font-family: "Lato";
 }
 
 .left-nav {
     height: 7vh;
     flex: 1;
     display: flex;
-    justify-content: stretch;
+    justify-content: flex-start;
+    align-content: center;
     align-items: center;
     padding-left: 3rem;
     padding-top: 1rem;
@@ -48,14 +222,30 @@
 .menu {
     width: 100px;
     height: auto;
+    color: rgb(0, 0, 0);
 }
 .shop {
-    width: 100px;
-    height: auto;
+    max-width: 100px;
+    height: 7vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 99, 71, 0);
+    cursor: pointer;
 }
+
 .home {
     height: 7vh;
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo {
+    width: 40%;
+    height: auto;
 }
 .right-nav {
     height: 7vh;
@@ -69,10 +259,12 @@
 .search {
     width: 100px;
     height: auto;
+    
 }
 .cart {
     width: 100px;
     height: auto;
+    color: rgb(0, 0, 0);
 }
 
 /*START OF CONTENT */
@@ -105,9 +297,7 @@
 
 }
 
-.section2 {
-    opacity: 0;
-}
+
 .front-about {
     background-color: white;
     width: 100%;
@@ -115,6 +305,7 @@
     display: flex;
     flex-direction: row;
     position: relative;
+    
 }
 .left-front-about {
     width: 50%;
@@ -122,8 +313,11 @@
     flex: column;
     justify-content: flex-start;
     align-items: center;
-    padding-left: 15rem;
+    padding-left: 10rem;
     padding-top: 3rem;
+    font-family: "Crimson Text";
+    font-weight: regular;
+    font-size: 22px;
 }
 
 .right-front-about {
@@ -133,11 +327,18 @@
     justify-content: center;
     align-content: center;
     padding-left: 5rem;
-    padding-right: 10rem;
+    padding-right: 5rem;
+    font-family: "Crimson Text";
+    font-weight: regular;
+    font-size: 18px;
     
 }
 .right-front-about h4 {
     margin-top: 20px;
+    color: rgb(0, 0, 0);
+    font-weight: light;
+    font-size: 16px;
+    font-family: "Lato";
 }
 .right-front-about p {
     margin-top: -20px;
@@ -241,12 +442,13 @@
 }
 .front-gallery-panel:hover #read-more {
     font-family: "Lato";
-    color: rgb(45, 158, 64);
-    font-size: 25px;
+    color: rgb(26, 161, 112);
+    font-size: 22px;
     font-weight: bold;
     opacity: 1;
     position: relative;
     background-color: rgba(255, 255, 255, 0.692);
+    letter-spacing: 6px;
 }
 .front-gallery-panel:hover .panel-image{
     background-position-y: 55%;
@@ -264,6 +466,7 @@
     width: 100%;
     color: black;
     display: flex;
+    flex-grow: 1;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -285,6 +488,7 @@
     font-weight: 300;
     font-size: 14px;
     font-family: Lato;
+    letter-spacing: 1.5px;
 
 }
 .categ {
@@ -293,6 +497,7 @@
     font-size: 14px;
     font-family: "Lato";
     padding-left: 5px;
+    letter-spacing: 1.5px;
 }
 
 .article{
@@ -302,7 +507,8 @@
     font-weight: regular;
     font-size: 25px;
     margin-top: 1rem;
-    border-bottom: 2px solid rgb(45, 158, 64);
+    border-bottom: 2.5px solid rgb(26, 161, 112);
+    letter-spacing: 1.5px;
 }
 
 .description{
@@ -313,6 +519,7 @@
     font-size: 16px;
     font-family: "Lato";
     margin-top: 5px;
+    letter-spacing: 1.5px;
 }
 .date{
     text-align: end;
