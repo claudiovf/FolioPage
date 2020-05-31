@@ -32,7 +32,7 @@
     background-color: transparent;
     transition: 
         background-color 0.5s ease,
-        visibility 0.15s ease;
+        visibility 0.5s ease;
     visibility: hidden;
     
 }
@@ -48,7 +48,7 @@
     flex-direction: column;
     justify-content: flex-end;
     visibility: hidden;
-    transition:  visibility 0.15s ease;
+    transition:  visibility 0.3s ease;
     display: none;
     padding-top: 15vh;
 }
@@ -405,6 +405,7 @@
 }
 .front-gallery-panel {
     width: 42vw;
+    max-width: 800px;
     height: 70vh;
     background-color: white;
     margin-top: 3rem;   
